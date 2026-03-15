@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
 const PORT = 3000;
 
 app.get('/', (req, res) => {
@@ -21,6 +22,12 @@ app.get('/orders', (req, res) => {
         ]
     });
 });
+
+app.post('/api/order', (req, res) => {
+    res.json({
+        message: "Order placed successfully"
+    })
+})
 
 
 
